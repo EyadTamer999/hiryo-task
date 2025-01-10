@@ -16,19 +16,23 @@ export default function HomeScreen() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getPosts().then((data) => dispatch(setPosts(data)));
+    if (posts.length === 0) {
+      console.log("Fetching posts");
+      getPosts().then((data) => dispatch(setPosts(data)));
+    }
   }, []);
 
   const posts = useSelector(selectPosts);
 
   return (
-    <SafeAreaView>
-      <View className="bg-white p-4 h-full w-full">
+    <SafeAreaView className="bg-white p-4 h-full w-full">
+      <View>
         <Text className="text-2xl font-bold text-gray-900 mb-4">Your Feed</Text>
         <ScrollView>
           {posts.map((post) => (
             <PostCard
               key={post.id}
+              postId={post.id}
               avatar={"https://thispersondoesnotexist.com/"}
               userName={post.user_id.toString()}
               title={post.title}
