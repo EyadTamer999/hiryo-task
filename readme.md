@@ -12,3 +12,13 @@ Screenshot of the app on an iOS device:
   <img src="assets/Feed.jpg" alt="Screenshot" width="300"/>
   <img src="assets/Post%20Detail.jpg" alt="Screenshot" width="300"/>
 </div>
+
+```
+
+```
+
+Project took about 2 hours to complete.
+
+```
+
+```
