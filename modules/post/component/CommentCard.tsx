@@ -13,7 +13,7 @@ export default function CommentCard({
   content,
 }: CommentCardProps) {
   return (
-    <View className="bg-gray-100 p-4 rounded-lg mb-4">
+    <View className="bg-gray-100 p-4 rounded-lg mb-4 h-full">
       <View className="flex-row items-center mb-2">
         {/* User Avatar */}
         <Image

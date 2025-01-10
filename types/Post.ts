@@ -1,8 +1,9 @@
 type Post = {
-  id: number;
-  user_id: number;
+  postId: number;
+  avatar: string;
+  userName: string;
   title: string;
-  body: string;
+  content: string;
 };
 
 export default Post;
