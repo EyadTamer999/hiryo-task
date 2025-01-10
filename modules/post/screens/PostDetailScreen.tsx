@@ -28,15 +28,18 @@ export default function PostDetailScreen({
 
   // Get the comments for the post
   useEffect(() => {
-    getComments(postId)
-      .then((data) => {
+    const fetchComments = async () => {
+      try {
+        const data = await getComments(postId);
         setComments(data);
-        setLoading(false); // Set loading to false once the data is fetched
-      })
-      .catch((error) => {
+        setLoading(false); // Set loading to false after data is fetched
+      } catch (error) {
         console.error("Error fetching comments:", error);
-        setLoading(false); // Set loading to false even in case of an error
-      });
+        setLoading(false); // Handle error and stop loading
+      }
+    };
+
+    fetchComments();
   }, [dispatch, postId]);
 
   return (

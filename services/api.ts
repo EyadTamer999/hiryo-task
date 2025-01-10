@@ -4,9 +4,11 @@ const getPosts = async () => {
 }
 
 const getComments = async (postId: number) => {
-    const response = await fetch(`https://gorest.co.in/public/v2/posts/${postId}/comments`); 
-    console.log(response.json().then((data) => console.log(data)));
-    return response.json();
+  const response = await fetch(`https://gorest.co.in/public/v2/posts/${postId}/comments`);
+    const data = await response.json();
+  console.log(data);
+  return data;  // Return the parsed data
 }
+
 
 export { getPosts, getComments };
