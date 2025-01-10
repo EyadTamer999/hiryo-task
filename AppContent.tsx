@@ -11,16 +11,26 @@ import { PostDetailScreen } from "./modules/post/App";
 
 const Stack = createStackNavigator();
 
-export default function AppContent() {
+function AppContent() {
   return (
     <NavigationContainer>
       <SafeAreaProvider>
         <StatusBar hidden />
         <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="PostDetail" component={PostDetailScreen} />
+          <Stack.Screen
+            name="Home"
+            component={HomeScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="PostDetail"
+            component={PostDetailScreen}
+            options={{ headerShown: false }}
+          />
         </Stack.Navigator>
       </SafeAreaProvider>
     </NavigationContainer>
   );
 }
+
+export default AppContent;
