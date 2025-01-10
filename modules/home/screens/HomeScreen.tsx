@@ -5,8 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 export default function HomeScreen() {
   return (
     <View>
-      <Text>Home Screen</Text>
-      <Button title="Go to Post Detail" />
+      <Text className="text-5xl">Home Screen</Text>
     </View>
   );
 }
