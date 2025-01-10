@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { View, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -8,7 +8,7 @@ import { ScrollView } from "react-native-gesture-handler";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts, selectPosts } from "../../../slices/postSlice";
 // api
-import { getPosts } from "./fetchApi";
+import { getPosts } from "../../../services/api";
 // Components
 import PostCard from "./component/PostCard";
 
@@ -23,6 +23,8 @@ export default function HomeScreen() {
   }, []);
 
   const posts = useSelector(selectPosts);
+
+  const [loading, setLoading] = useState(true);
 
   return (
     <SafeAreaView className="bg-white p-4 h-full w-full">
